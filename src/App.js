@@ -1,14 +1,15 @@
-import { useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
-import Sidebar from './components/Sidebar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Components from './pages/Components';
-import Profile from './pages/Profile';
-
-import './styles.scss';
+import { useState } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Components from "./pages/Components";
+import Profile from "./pages/Profile";
+// import NewPage from "./pages/NewPage";
+import "./styles.scss";
+import NewPage from "./pages/NewPage";
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -28,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className={`app ${toggled ? 'toggled' : ''}`}>
+    <div className={`app ${toggled ? "toggled" : ""}`}>
       <Sidebar
         image={image}
         collapsed={collapsed}
@@ -43,6 +44,7 @@ function App() {
         <Switch>
           <Route path="/components" component={Components} />
           <Route path="/profile" component={Profile} />
+          <Route path="/Newpage" component={NewPage} />
           <Route path="/not-found" component={NotFound} />
           <Route path="/" exact>
             <Home image={image} handleImageChange={handleImageChange} />
